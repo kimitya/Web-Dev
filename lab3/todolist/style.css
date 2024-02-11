@@ -1,0 +1,67 @@
+* {
+    font-family: 'Segoe UI', SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+header {
+    background-color: rgb(21, 21, 21);
+    color: rgb(153, 151, 151);
+    width: 100%;
+    padding-left: 50px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-bottom: 100px;
+}
+
+#input-box {
+    width: 600px;
+    padding: 10px;
+    margin: 3px;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+button {
+    padding: 13px;
+    margin: 3px;
+    background-color: rgb(75, 145, 232);
+    border-radius: 7px;
+    font-size: 15px;
+
+}
+
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 15px;
+    user-select: none;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-left: -40px;
+    width: 660px
+}
+
+input[type="checkbox"] {
+    margin-right: 45px;
+
+}
+
+#list-container li input[type="checkbox"]:checked+label {
+    text-decoration: line-through;
+}
+
+
+ul li span {
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: black;
+    float: inline-end;
+    margin-top: -4px;
+}
+
+.container {
+    margin-left: 400px
+}
