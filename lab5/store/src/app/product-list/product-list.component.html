@@ -1,0 +1,5 @@
+<div class="list" *ngIf="selectedCategory">
+    <div *ngFor="let product of selectedCategory.products">
+      <app-product-item [product]="product" (remove)="onProductItemRemove($event)" (like)="onProductItemLike($event)"></app-product-item>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+.header {
+    width: 100%;
+    padding: 3px;
+    margin: 0;
+    background-color: hotpink;
+    color: white;
+}
+
+h1 {
+    margin-left: 15px;
+}

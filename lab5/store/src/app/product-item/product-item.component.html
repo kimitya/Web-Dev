@@ -1,0 +1,25 @@
+<div class="card">
+    <img [src]="'../assets/' + product.id + '.jpeg'" alt="Product Image">
+
+    <div class="info">
+        <h3>
+            <a target="_blank" rel="noopener noreferrer" [title]="product.name" [href]="product.kaspi">
+                {{ product.name }}
+            </a>
+        </h3>
+
+        <p>Rating: {{product.rating}}</p>
+        <p>Likes: {{product.likes}}</p>
+
+        <p *ngIf="product.description">
+            {{ product.description }}
+        </p>
+
+        <button class="like" (click)="likeProduct()">Like</button>
+        <button class="remove" (click)="removeProduct()">Delete</button>
+        
+
+        <share-buttons [theme]="'modern-dark'" [include]="['telegram','whatsapp']" [show]="5" [showText]="true"
+            [url]="product.kaspi" [autoSetMeta]="false"></share-buttons>
+    </div>
+</div>
