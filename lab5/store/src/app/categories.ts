@@ -11,23 +11,23 @@ export class Category {
     }
 }
 
-export const categories:Category[] = [
+export const categories: Category[] = [
     {
         name: "flowers",
         products: products.slice(0, 5)
     },
     {
         name: "cars",
-        products: []
+        products: products.slice(5, 10)
     },
     {
-        name: "houses",
-        products:[]
+        name: "duplo",
+        products: products.slice(15, 20)
     },
     {
         name: "animals",
-        products:[]
+        products: products.slice(10, 15)
     },
-    
+
 ]
 
