@@ -1,5 +1,5 @@
 import { ProductItem } from "./product-items";
-import { products } from "./product-items";
+import { flowers, cars, duplo, animals } from "./product-items";
 
 export class Category {
     name: string;
@@ -11,22 +11,23 @@ export class Category {
     }
 }
 
+
 export const categories: Category[] = [
     {
         name: "flowers",
-        products: products.slice(0, 5)
+        products: flowers
     },
     {
         name: "cars",
-        products: products.slice(5, 10)
+        products: cars
     },
     {
         name: "duplo",
-        products: products.slice(15, 20)
+        products: duplo
     },
     {
         name: "animals",
-        products: products.slice(10, 15)
+        products: animals
     },
 
 ]
