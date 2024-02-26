@@ -5,6 +5,7 @@ export class ProductItem {
     rating: string;
     kaspi: string;
     likes: number;
+    liked: boolean;
     photo: string;
 
     constructor(id: number, name: string, description: string, rating: string, kaspi: string, likes: number) {
@@ -14,6 +15,7 @@ export class ProductItem {
         this.rating = rating;
         this.kaspi = kaspi;
         this.likes = likes;
+        this.liked = false;
         this.photo = `../assets/${id}.jpeg`;
     }
 }

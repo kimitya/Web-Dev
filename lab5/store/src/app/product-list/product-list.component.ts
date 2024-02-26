@@ -22,7 +22,15 @@ export class ProductListComponent {
     const product = this.selectedCategory.products.find(item => item.id === id);
 
     if (product) {
-      product.likes += 1;
+      //product.likes += 1;
+      if (product.liked===false) {
+        product.likes += 1;
+        product.liked = true;
+      } else if (product.likes>0){
+        product.likes -=1;
+        product.liked = false;
+      }
+      
     }
   }
 }
