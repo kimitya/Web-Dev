@@ -14,7 +14,6 @@ import { CommonModule } from '@angular/common';
 })
 export class AlbumPhotosComponent implements OnInit{
   photos!: Photo[];
-  albumId: number = 0;
 
   constructor(private route: ActivatedRoute, private albumService: AlbumsService){}
 
@@ -25,7 +24,6 @@ export class AlbumPhotosComponent implements OnInit{
   getPhotos(){
     this.route.paramMap.subscribe((params) => {
       const id = Number(params.get('id'));
-      this.albumId=id;
       this.albumService.getAlbumPhoto(id).subscribe((photos) => {
         this.photos=photos;
       });
