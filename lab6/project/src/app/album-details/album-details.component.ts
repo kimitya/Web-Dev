@@ -1,29 +1,36 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, RouterModule} from "@angular/router";
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute, RouterModule } from "@angular/router";
 import { Album } from '../models';
 import { AlbumsService } from '../albums.service';
-import {CommonModule} from "@angular/common";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-album-details',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, FormsModule],
   templateUrl: './album-details.component.html',
   styleUrl: './album-details.component.css'
 })
-export class AlbumDetailsComponent implements OnInit{
+export class AlbumDetailsComponent implements OnInit {
   album!: Album;
   loaded!: boolean;
+  newTitle: string = '';
+  // oldTitle: string = '';
+
+  @Output() update = new EventEmitter<{ id: number, newTitle: string }>();
 
   constructor(private route: ActivatedRoute,
-              private albumService: AlbumsService) {
+    private albumService: AlbumsService) {
+      
   }
 
   ngOnInit() {
     this.getAlbum();
+    // this.oldTitle=this.album.title;
   }
 
-  getAlbum(){
+  getAlbum() {
     this.route.paramMap.subscribe((params) => {
       const id = Number(params.get('id'));
       this.loaded = false;
@@ -33,4 +40,25 @@ export class AlbumDetailsComponent implements OnInit{
       });
     });
   }
+
+  updateAlbum(event: Event) {
+    event.preventDefault();
+    this.albumService.updateAlbumTitle(this.album.id, this.newTitle).subscribe(
+      (updatedAlbum) => {
+        // this.oldTitle=this.album.title;
+        this.album.title = updatedAlbum.title;
+        this.newTitle = '';
+      }
+    );
+  }
+
+  // returnTitle(){
+  //   this.albumService.updateAlbumTitle(this.album.id, this.oldTitle).subscribe(
+  //     (updatedAlbum) => {
+  //       this.oldTitle=this.album.title;
+  //       this.album.title = updatedAlbum.title;
+  //       this.newTitle = '';
+  //     }
+  //   );
+  // }
 }

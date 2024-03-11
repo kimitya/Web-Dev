@@ -1,9 +1,19 @@
 <div *ngIf="loaded">
     <h3>Album detail #{{album.id}}</h3>
-  
+
     <h4>{{album.title}}</h4>
 
-  </div>
-  
-  
-  <p *ngIf="!loaded">Album detail page is loading...</p>
+    <form (submit)="updateAlbum($event)">
+        <fieldset>
+            <label for="title">Update title:</label>
+            <input type="text" [(ngModel)]="newTitle" id="title" name="title" required>
+            <br />
+            <button type="submit">Save</button>
+            <a [routerLink]="['/albums']"><button>Return back</button></a>
+            <!-- <button (click)="returnTitle()">Return back</button> -->
+        </fieldset>
+    </form>
+</div>
+
+
+<p *ngIf="!loaded">Album detail page is loading...</p>

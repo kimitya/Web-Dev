@@ -21,4 +21,13 @@ export class AlbumsService {
   deleteAlbum(id: number) {
     return this.client.delete(`https://jsonplaceholder.typicode.com/albums/${id}`)
   }
+
+  createAlbum(newAlbum: Album): Observable<Album> {
+    return this.client.post<Album>('https://jsonplaceholder.typicode.com/albums', newAlbum);
+  }
+
+  updateAlbumTitle(id: number, newTitle: string): Observable<Album> {
+    const updatedAlbum = {id: id, title: newTitle }; 
+    return this.client.put<Album>(`https://jsonplaceholder.typicode.com/albums/${id}`, updatedAlbum);
+  }
 }
