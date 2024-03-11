@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Album} from "./models";
+import {Album, Photo} from "./models";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
@@ -29,5 +29,9 @@ export class AlbumsService {
   updateAlbumTitle(id: number, newTitle: string): Observable<Album> {
     const updatedAlbum = {id: id, title: newTitle }; 
     return this.client.put<Album>(`https://jsonplaceholder.typicode.com/albums/${id}`, updatedAlbum);
+  }
+
+  getAlbumPhoto(id: number) {
+    return this.client.get<Photo[]>(`https://jsonplaceholder.typicode.com/albums/${id}/photos`);
   }
 }
