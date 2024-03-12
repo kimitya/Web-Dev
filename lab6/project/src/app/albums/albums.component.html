@@ -1,14 +1,14 @@
 <fieldset>
     <label for="title">Title:</label>
     <input type="text" [(ngModel)]="newAlbum.title" id="title"> <br />
-    <button (click)="addAlbum()">Add album</button>
+    <button class="addition" (click)="addAlbum()">Add album</button>
 </fieldset>
 
 <div>
     <ul>
       <li *ngFor="let album of albums">
         <a [routerLink]="['/albums', album.id]">{{album.id}} - {{album.title}}</a>
-        <button (click)="deleteAlbum(album.id)">x</button>
+        <button class="deletion" (click)="deleteAlbum(album.id)">x</button>
       </li>
     </ul>
 </div>

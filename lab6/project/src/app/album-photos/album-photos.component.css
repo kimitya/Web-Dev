@@ -1,0 +1,14 @@
+button {
+    padding: 7px 15px 7px 15px;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.return {
+    margin-top: 20px;
+    background-color: cadetblue;
+}
+
+div {
+    padding: 10px;
+}

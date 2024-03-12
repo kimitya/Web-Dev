@@ -19,7 +19,7 @@ export class AlbumsComponent implements OnInit, OnDestroy {
 
   constructor(private albumService: AlbumsService) {
     this.newAlbum = {
-      
+
     } as Album;
   }
 
@@ -41,7 +41,7 @@ export class AlbumsComponent implements OnInit, OnDestroy {
   }
 
   addAlbum() {
-    this.newAlbum.id=this.albums.length+1;
+    this.newAlbum.id = this.albums.length + 1;
     this.albumService.createAlbum(this.newAlbum).subscribe((album) => {
       this.albums.push(this.newAlbum);
       alert('Album created');

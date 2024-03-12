@@ -1,0 +1,18 @@
+a {
+    text-decoration: none;
+    margin-right: 40px;
+    color: white;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.header {
+    background-color: hotpink;
+    padding: 3px;
+
+}
+
