@@ -1,0 +1,14 @@
+.header {
+    padding: 20px;
+    font-size: 25px;
+    background-color: rgb(110, 183, 186);
+    padding-left: 30px;
+}
+
+a:visited {
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}

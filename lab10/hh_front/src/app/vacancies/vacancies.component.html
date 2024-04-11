@@ -1,9 +1,9 @@
 <div>
     <ul>
-      <li *ngFor="let vacancy of vacancies">
-        <h2>{{vacancy.id}} - {{vacancy.name}}</h2>
-        <p>{{vacancy.description}}</p>
-        <p>{{vacancy.salary}}</p>
-      </li>
+        <li *ngFor="let vacancy of vacancies">
+            <h2>{{vacancy.name}}</h2>
+            <p>Description: {{vacancy.description}}</p>
+            <p>Salary: {{vacancy.salary}}</p>
+        </li>
     </ul>
 </div>
